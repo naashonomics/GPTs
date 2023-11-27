@@ -1,0 +1,55 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Random Quote API",
+    "description": "An API for fetching a random quote.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.quotable.io"
+    }
+  ],
+  "paths": {
+    "/random": {
+      "get": {
+        "summary": "Get a Random Quote",
+        "operationId": "getRandomQuote",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Quote": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "length": {
+            "type": "integer"
+          }
+        },
+        "required": ["_id", "content", "author", "length"]
+      }
+    }
+  }
+}
