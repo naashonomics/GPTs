@@ -1,0 +1,36 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Get Trending Movies",
+    "description": "Fetches Trending movies from https://api.themoviedb.org/3/trending/all/{time_window}",
+    "version": "v1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.themoviedb.org"
+    }
+  ],
+  "paths": {
+    "/3/trending/all/day": {
+      "get": {
+        "description": "Get Trending movies for today",
+        "operationId": "GetTrendingMoviesForToday",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "query",
+            "description": "API key used for query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
